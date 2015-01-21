@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MailBox_1
+  m_Shader: {fileID: 4800000, guid: fc5882be63a9e904d898be45e3cc158a, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _diff
+        second:
+          m_Texture: {fileID: 2800000, guid: 164bdcdc8a25d664182943cb20cab614, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _nm
+        second:
+          m_Texture: {fileID: 2800000, guid: 69f049d4ed3e2564f87451b1c8b717b5, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_31
+        second:
+          m_Texture: {fileID: 8900000, guid: a596436b21c6d484bb9b3b6385e3e666, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _gloss
+        second:
+          m_Texture: {fileID: 2800000, guid: 5fb9697126e667f46a0d1ec0bda06451, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cubemap
+        second:
+          m_Texture: {fileID: 8900000, guid: 8256b43bb1bf5744fbc18ed43f94f9b5, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _node_25
+        second: .249999985
+      data:
+        first:
+          name: _node_25_copy
+        second: .5
+      data:
+        first:
+          name: _Fresnel
+        second: .589285731
+      data:
+        first:
+          name: _ReflectionPower
+        second: .589285731
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _node_70
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _MainColor
+        second: {r: .816176474, g: .816176474, b: .816176474, a: 1}
+      data:
+        first:
+          name: _SpecularColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _ReflectionColor
+        second: {r: 1, g: 1, b: 1, a: 1}
