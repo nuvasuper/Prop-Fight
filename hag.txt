@@ -1,0 +1,19 @@
+67~~:1231
+5413:1235
+5430:1240
+5458:1242
+5570:1256
+5602:1259
+5646:106
+5945:148
+6081:212
+4503:1144
+
+webassign tutorial hw: mon
+webassign postlab: mon
+smart physics prelecture:mon DONE
+book tutorial hw: mon2
+econ prelecture: mon
+
+tuesday: iso
+tues/thurs: neuro lecture
