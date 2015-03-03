@@ -66,10 +66,4 @@ public class NetworkManager : MonoBehaviour {
 	{
 		Debug.Log("Server Initializied");
 	}
-
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
