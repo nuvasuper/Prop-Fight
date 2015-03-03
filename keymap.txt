@@ -1,0 +1,18 @@
+w-  positive Z force
+A - negative X force
+S - negative Z force
+D - positive X force
+
+U - negative Y axis
+I - negative Z axis
+O - positive Y axis
+J - negative X axis
+K - positive Z axis
+L - positive X axis
+
+Spacebar - locks or unlocks ZX axis
+
+LeftShift - grabs last object that had a rigidbody (probably doesn't work over network)
+LeftCtr - warps ghostchair to current position+rotation.  some networking issues, but mostly good.
+    The player that the chair belongs to can pass through it, others are affected normally
+
