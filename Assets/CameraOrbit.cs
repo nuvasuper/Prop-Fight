@@ -11,6 +11,8 @@ public class CameraOrbit : MonoBehaviour {
 	private float x;
 	private float y;
 	private Transform c;
+	public float xMin = 0f;
+	public float xMax = 90f;
 	// Use this for initialization
 	void Start () {
 		//Screen.lockCursor = true;
@@ -33,10 +35,20 @@ public class CameraOrbit : MonoBehaviour {
 
 		x = Input.GetAxis("Mouse Y") * ySpeed;
 		y = Input.GetAxis("Mouse X") * xSpeed;
-
 		//y = ClampAngle(y, yMinLimit, yMaxLimit);
+
 		t.Rotate (0, y,0);
-		c.Rotate (x, 0,0);
+		float predictedX = c.rotation.eulerAngles.x + x;
+		if (predictedX > 360)
+			predictedX -= 360;
+
+		if (predictedX > 90) {
+			c.rotation = Quaternion.Euler (90, c.rotation.eulerAngles.y, c.rotation.eulerAngles.z);
+		} else if (predictedX < 0) {
+			c.rotation = Quaternion.Euler (0, c.rotation.eulerAngles.y, c.rotation.eulerAngles.z);
+		} else {
+			c.Rotate (x, 0, 0);
+		}
 		x = Mathf.Deg2Rad*c.rotation.eulerAngles.x;
 		y = -1*Mathf.Deg2Rad*t.rotation.eulerAngles.y;
 		//Debug.Log (y);
@@ -48,11 +60,15 @@ public class CameraOrbit : MonoBehaviour {
 
 	}
 
-	private float ClampAngle (float angle, float min,float max) {
-		if (angle < -360)
-			angle += 360;
-		if (angle > 360)
-			angle -= 360;
-		return Mathf.Clamp (angle, min, max);
+	private float restrictX (float x) {
+		if (c.rotation.eulerAngles.x > 180) {
+			c.rotation = Quaternion.Euler (0, c.rotation.eulerAngles.y, c.rotation.eulerAngles.z);
+			return Mathf.Min (0, x);
+		}
+		if (c.rotation.eulerAngles.x > 90) {
+			c.rotation = Quaternion.Euler (90, c.rotation.eulerAngles.y, c.rotation.eulerAngles.z);
+			return Mathf.Min (x, 0);
+		}
+		return x;
 	}
 }

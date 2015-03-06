@@ -38,7 +38,7 @@ public class Move : MonoBehaviour {
 		if (mode ==1) {//If we're not locked in Z and X rotation, then allow rotation forces
 			float z = Input.GetAxis ("RotZ");
 			float y = Input.GetAxis ("RotY");
-			float x = Input.GetAxis ("RotX");
+			float x = -1*Input.GetAxis ("RotX");
 			Vector3 rotation = new Vector3(x,y,z)*rotForce;
 			r.AddTorque(rotation);
 		}

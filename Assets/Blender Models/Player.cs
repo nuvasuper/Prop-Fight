@@ -41,4 +41,20 @@ public class Player : MonoBehaviour {
 		j.breakTorque=1;
 		print ("grab: "+r);
 	}
+
+	public void die() {
+		Destroy(GameObject.Find("Dummy"));
+		PhotonNetwork.Destroy(this.gameObject);
+	}
+
+	void OnGUI() {
+		if (GUI.Button (new Rect (400, 50, 100, 50), "Respawn")) {
+			GameObject.Find("_Photon Manager").GetComponent<PhotonManager>().spawnMyPlayer();
+			die ();
+		}
+		if (GUI.Button (new Rect (400, 100, 100, 50), "Choose Again")) {
+			GameObject.Find("_Photon Manager").GetComponent<PhotonManager>().chooseCharacter();
+			die();
+		}
+	}
 }
