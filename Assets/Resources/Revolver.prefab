@@ -277,11 +277,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 449282}
+  - 111: {fileID: 11149254}
   - 54: {fileID: 5449254}
   - 114: {fileID: 11449254}
-  - 114: {fileID: 11411122}
-  - 114: {fileID: 11426252}
-  - 114: {fileID: 11460030}
   m_Layer: 0
   m_Name: Revolver
   m_TagString: Untagged
@@ -927,29 +925,20 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134426}
   m_Enabled: 1
---- !u!114 &11411122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149282}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8d6040d623eb4b409b7b187ee3e6530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 
---- !u!114 &11426252
-MonoBehaviour:
+--- !u!111 &11149254
+Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149282}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fe7fd3fd0102440aa8cab2f72a26db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11434426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -985,31 +974,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 10
   rotForce: 1
---- !u!114 &11460030
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  prefixBackup: -1
-  observed: {fileID: 0}
-  synchronization: 3
-  onSerializeTransformOption: 3
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 11426252}
-  ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
-  isRuntimeInstantiated: 0
 --- !u!124 &12434426
 Behaviour:
   m_ObjectHideFlags: 1

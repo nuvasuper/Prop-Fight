@@ -42,11 +42,9 @@ GameObject:
   - 4: {fileID: 446918}
   - 33: {fileID: 3346914}
   - 23: {fileID: 2346914}
+  - 64: {fileID: 6446914}
   - 54: {fileID: 5446914}
   - 114: {fileID: 11446914}
-  - 114: {fileID: 11471858}
-  - 114: {fileID: 11479118}
-  - 114: {fileID: 11452928}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -315,6 +313,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6446914
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146918}
+  m_Material: {fileID: 13400000, guid: 67913c85372c7e2499fec2b99e0103e9, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 1
+  m_Mesh: {fileID: 4300010, guid: ef9cc9b6305c3d143a0d379da6d3631f, type: 3}
 --- !u!65 &6546914
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -390,17 +401,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 10
   rotForce: 1
---- !u!114 &11452928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fe7fd3fd0102440aa8cab2f72a26db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11465778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,43 +423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd36b090a1a5e443aa6f4b79ba64af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11471858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146918}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8d6040d623eb4b409b7b187ee3e6530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 
---- !u!114 &11479118
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  prefixBackup: -1
-  observed: {fileID: 0}
-  synchronization: 3
-  onSerializeTransformOption: 3
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 11452928}
-  ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
-  isRuntimeInstantiated: 0
 --- !u!124 &12465780
 Behaviour:
   m_ObjectHideFlags: 1

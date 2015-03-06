@@ -191,12 +191,13 @@ GameObject:
   - 4: {fileID: 469856}
   - 33: {fileID: 3369836}
   - 23: {fileID: 2369834}
+  - 95: {fileID: 9569834}
   - 54: {fileID: 5469834}
   - 114: {fileID: 11469838}
   - 114: {fileID: 11451086}
+  - 114: {fileID: 11469840}
   - 114: {fileID: 11427918}
   - 114: {fileID: 11491844}
-  - 114: {fileID: 11469840}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -1001,6 +1002,21 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169850}
   m_Enabled: 1
+--- !u!95 &9569834
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169856}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: 2186b8522b6fd4f3a91076b0b83cfe14, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &9582676
 Animator:
   serializedVersion: 3

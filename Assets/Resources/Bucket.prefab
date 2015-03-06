@@ -190,6 +190,7 @@ GameObject:
   - 4: {fileID: 431134}
   - 33: {fileID: 3331168}
   - 23: {fileID: 2331168}
+  - 95: {fileID: 9531168}
   - 54: {fileID: 5431168}
   - 114: {fileID: 11431168}
   - 114: {fileID: 11420098}
@@ -1250,6 +1251,21 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123830}
   m_Enabled: 1
+--- !u!95 &9531168
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131134}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e8de45ec322f8784b871690da99da871, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11413090
 MonoBehaviour:
   m_ObjectHideFlags: 1

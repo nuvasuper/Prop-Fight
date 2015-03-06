@@ -16,13 +16,37 @@ Platform assembly: C:\Users\Clark\Documents\GitHub\Prop-Fight\Builds\Network Bui
 Loading C:\Users\Clark\Documents\GitHub\Prop-Fight\Builds\Network Build 3.3.2015_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Clark\Documents\GitHub\Prop-Fight\Builds\Network Build 3.3.2015_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Clark\Documents\GitHub\Prop-Fight\Builds\Network Build 3.3.2015_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.072 seconds
+- Completed reload, in  0.061 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Clark\Documents\GitHub\Prop-Fight\Builds\Network Build 3.3.2015_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Clark\Documents\GitHub\Prop-Fight\Builds\Network Build 3.3.2015_Data\Managed\System.dll (this message is harmless)
 OnJoinedRoom
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Initially fixed collisions
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Initially fixed collisions
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+just warped
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+just warped
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Initially fixed collisions
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+just warped
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
