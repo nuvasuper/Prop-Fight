@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
 			if (!grabbing&&last!=null) {
 				grabbing = true;
-				grab(last.rigidbody);
+				grab(last.GetComponent<Rigidbody>());
 			} else {
 				Destroy(this.gameObject.GetComponent<FixedJoint>());
 				grabbing = false;

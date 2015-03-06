@@ -8,7 +8,7 @@ public class Move : MonoBehaviour {
 	private int mode;
 	
 	void Start () {
-		r = this.rigidbody;
+		r = this.GetComponent<Rigidbody>();
 		if (r.constraints==(RigidbodyConstraints.FreezeRotationX|RigidbodyConstraints.FreezeRotationZ)) {
 				mode = 0;
 		} else {
@@ -16,15 +16,6 @@ public class Move : MonoBehaviour {
 		}
 	}
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			if (mode==1) {
-				r.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-				mode = 0;
-			} else {
-				r.constraints = RigidbodyConstraints.None;
-				mode = 1;
-			}
-		}
 	}
 
 	// Update is called once per frame
