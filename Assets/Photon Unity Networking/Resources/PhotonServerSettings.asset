@@ -32,4 +32,6 @@ MonoBehaviour:
   - grab
   - warpTo
   - ignoreCollisions
+  - release
+  - applyForces
   DisableAutoOpenWizard: 0

@@ -9,6 +9,7 @@ public class PhotonManager : MonoBehaviour {
 	public GameObject cS;
 	public bool playerLiving;
 	GameObject myPlayerGO;
+	Player player;
 	// Use this for initialization
 	void Start () {
 		Connect ();
@@ -20,14 +21,23 @@ public class PhotonManager : MonoBehaviour {
 		PhotonNetwork.ConnectUsingSettings ("0.0.1");
 	}
 
+	public void killPlayer() {
+		playerLiving = false;
+		standbyCamera.SetActive (true);
+		player.die ();
+		chooseCharacter ();
+	}
+
 	void OnGUI()
 	{
 		GUILayout.Label (PhotonNetwork.connectionStateDetailed.ToString());
 		if (playerLiving) {
 			if (GUI.Button (new Rect (400, 50, 100, 50), "Respawn")) {
 				standbyCamera.SetActive(true);
-				playerLiving=false;
-				myPlayerGO.GetComponent<Player>().die ();
+				if (playerLiving) {
+					playerLiving=false;
+					myPlayerGO.GetComponent<Player>().die ();
+				}
 				GameObject.Find ("_Photon Manager").GetComponent<PhotonManager> ().spawnMyPlayer ();
 
 
@@ -77,7 +87,8 @@ public class PhotonManager : MonoBehaviour {
 		}
 		standbyCamera.SetActive (false);
 		myPlayerGO.GetComponent<Move> ().enabled = true;
-		myPlayerGO.GetComponent<Player> ().enabled = true;
+		player = myPlayerGO.GetComponent<Player> ();
+		//myPlayerGO.GetComponent<Player> ().enabled = true;  //enabled by default to track last RigidBody for grabbing properly.
 		//myPlayerGO.GetComponent<Chair> ().enabled = true;
 		myPlayerGO.transform.FindChild("Dummy").gameObject.SetActive (true);
 		playerLiving=true;
