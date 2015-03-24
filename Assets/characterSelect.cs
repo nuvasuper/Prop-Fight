@@ -25,11 +25,11 @@ public class characterSelect : MonoBehaviour {
 		//if (GUI.Button (new Rect (50, 250, 100, 50), "Fire Hydrant"))
 		//    pm.pickPrefab ("Fire Hydrant");
 		if (GUI.Button (new Rect (50, 250, 100, 50), "Present Box"))
-			pm.pickPrefab ("Present Box");
+			pm.pickPrefab ("PresentBox");
 		if (GUI.Button (new Rect (50, 300, 100, 50), "Revolver"))
 			pm.pickPrefab ("Revolver");
 		if (GUI.Button (new Rect (50, 350, 100, 50), "Road Block"))
-			pm.pickPrefab ("Road Block");
+			pm.pickPrefab ("RoadBlock");
 		if (GUI.Button (new Rect (50, 400, 100, 50), "Table"))
 			pm.pickPrefab ("Table");
 

@@ -2,19 +2,22 @@
 using System.Collections;
 
 public class Player : Photon.MonoBehaviour {
-	private int status;
-	private string username;
-	private string team;
+	//private int status;
+	//private string username;
+	//private string team;
 	public string type;
 	public Rigidbody last;
-	private bool grabbing;
-	private FixedJoint j;
+	public bool grabbing;
 	public PhotonView pv;
+	public GameObject myCamera;
+	public Rigidbody r;
+
 
 
 	// Use this for initialization
 	void Start () {
-		this.type = "player";
+		if (type==null)
+			type = "default";
 		pv = this.GetComponent<PhotonView> ();
 	}
 
@@ -50,9 +53,12 @@ public class Player : Photon.MonoBehaviour {
 
 	[RPC]
 	void grab() {
+		if (last.gameObject.GetPhotonView()!=null&&last.gameObject.GetPhotonView().isMine) {
+			last.gameObject.GetComponent<Player>().OnGrabbed(this.gameObject);
+		}
 		grabbing = true;
 		print ("grabbing " + last);
-		j = this.gameObject.AddComponent<FixedJoint>();
+		FixedJoint j = this.gameObject.AddComponent<FixedJoint>();
 		j.connectedBody = last;
 		j.breakForce=100;
 		j.breakTorque=100;
@@ -61,7 +67,10 @@ public class Player : Photon.MonoBehaviour {
 
 	[RPC]
 	void release() {
-		j = this.GetComponent<FixedJoint> ();
+		if (last.gameObject.GetPhotonView()!=null&&last.gameObject.GetPhotonView().isMine) {
+			last.gameObject.GetComponent<Player>().OnReleased(this.gameObject);
+		}
+	 	FixedJoint j = this.GetComponent<FixedJoint> ();
 		if (j != null) {
 			Destroy(j);
 			grabbing=false;
@@ -86,6 +95,39 @@ public class Player : Photon.MonoBehaviour {
 		if (GUI.Button (new Rect (400, 100, 100, 50), "Choose Again")) {
 			GameObject.Find("_Photon Manager").GetComponent<PhotonManager>().chooseCharacter();
 			die();
+		}
+	}
+
+	[RPC]
+	void blind(float blindtime) {
+		if (pv.isMine) {
+			Transform baseCamera =  myCamera.transform.GetChild(0);
+			GameObject blindScreen = Resources.Load("Resources/Blind",typeof(GameObject)) as GameObject;
+			Instantiate(blindScreen,new Vector3(0,-10,0),Quaternion.identity);
+			StartCoroutine(blindScreen.GetComponent<Blindness>().setVictim(baseCamera, blindtime));
+		}
+	}
+
+	[RPC]
+	void eat (float chunkSize) {
+		if (r.mass <= chunkSize) {
+			if (pv.isMine) {
+				PhotonNetwork.Destroy (this.gameObject);
+			}
+		} else {
+			r.mass -= chunkSize;
+		}
+	}
+
+	void OnGrabbed(GameObject other) {
+		if (this.type.Equals ("Table")) {
+			this.GetComponent<Table>().OnGrabbed(other);
+		}
+	}
+
+	void OnReleased(GameObject other) {
+		if (this.type.Equals ("Table")) {
+			this.GetComponent<Table>().OnReleased(other);
 		}
 	}
 }

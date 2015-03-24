@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11400490}
   m_Layer: 0
   m_Name: Dummy
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +66,8 @@ GameObject:
   - 114: {fileID: 11451048}
   - 114: {fileID: 11465806}
   - 114: {fileID: 11453768}
+  - 114: {fileID: 11416410}
+  - 65: {fileID: 6532890}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
@@ -339,7 +341,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145372}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -347,6 +349,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6532890
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.45000005, y: 1.45000005, z: 1.25}
+  m_Center: {x: 0, y: 0, z: .699999988}
 --- !u!65 &6545372
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -365,7 +379,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145376}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -377,7 +391,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145378}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -389,7 +403,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145380}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -401,7 +415,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145382}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -447,6 +461,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xMin: 0
   xMax: 90
+--- !u!114 &11416410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145372}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be1d7051cafaf948875781377850898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: 11465806}
+  chunkSize: 1
+  r: {fileID: 0}
+  m: {fileID: 0}
 --- !u!114 &11445372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,9 +487,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae4ad1917674941b7d0f81ffc9d2c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 10
-  rotForce: 1
+  moveForce: 1000
+  rotForce: 1000
   r: {fileID: 5445372}
+  dragForce: 100
+  mass: 0
 --- !u!114 &11451048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -472,9 +503,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d6040d623eb4b409b7b187ee3e6530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Crate
   last: {fileID: 0}
+  grabbing: 0
   pv: {fileID: 0}
+  myCamera: {fileID: 100490}
+  r: {fileID: 0}
 --- !u!114 &11453768
 MonoBehaviour:
   m_ObjectHideFlags: 1

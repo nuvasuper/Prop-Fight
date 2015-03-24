@@ -34,4 +34,11 @@ MonoBehaviour:
   - ignoreCollisions
   - release
   - applyForces
+  - blind
+  - eat
+  - grow
+  - box
+  - unbox
+  - fire
+  - updateMass
   DisableAutoOpenWizard: 0

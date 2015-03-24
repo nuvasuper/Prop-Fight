@@ -23,7 +23,7 @@ public class Chair : MonoBehaviour {
 
 	void ability() {
 		if (pv != null) {
-			pv.RPC("warpTo", PhotonTargets.All, t.position, t.rotation);
+			pv.RPC("warpTo", PhotonTargets.AllBuffered, t.position, t.rotation);
 		} else {
 			print ("pv missing on ghostchair");
 		}

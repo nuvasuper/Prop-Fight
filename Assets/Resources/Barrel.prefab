@@ -47,6 +47,8 @@ GameObject:
   - 114: {fileID: 11471858}
   - 114: {fileID: 11479118}
   - 114: {fileID: 11452928}
+  - 114: {fileID: 11476236}
+  - 135: {fileID: 13503022}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -113,7 +115,7 @@ GameObject:
   - 114: {fileID: 11465778}
   m_Layer: 0
   m_Name: Dummy
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +355,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146914}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -365,7 +367,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146920}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -377,7 +379,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146922}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -389,7 +391,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146924}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -420,9 +422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae4ad1917674941b7d0f81ffc9d2c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 10
-  rotForce: 1
+  moveForce: 100
+  rotForce: 100
   r: {fileID: 5446914}
+  dragForce: .00999999978
+  mass: 0
 --- !u!114 &11452928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -471,9 +475,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d6040d623eb4b409b7b187ee3e6530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Barrel
   last: {fileID: 0}
+  grabbing: 0
   pv: {fileID: 0}
+  myCamera: {fileID: 165778}
+  r: {fileID: 0}
+--- !u!114 &11476236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146918}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa909dba06b2e94298f36c13b7b835d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 11446914}
+  myRigid: {fileID: 5446914}
+  explosionForce: 5000
+  explosionRadius: 7
+  explosionZone: {fileID: 13503022}
+  blown: 0
 --- !u!114 &11479118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -506,13 +530,25 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165780}
   m_Enabled: 1
+--- !u!135 &13503022
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146918}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13646914
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146916}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: af1850a70e037434f8019c08742dd3e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .479999989

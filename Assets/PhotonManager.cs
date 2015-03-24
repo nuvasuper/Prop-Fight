@@ -89,7 +89,12 @@ public class PhotonManager : MonoBehaviour {
 		myPlayerGO.GetComponent<Move> ().enabled = true;
 		player = myPlayerGO.GetComponent<Player> ();
 		//myPlayerGO.GetComponent<Player> ().enabled = true;  //enabled by default to track last RigidBody for grabbing properly.
-		//myPlayerGO.GetComponent<Chair> ().enabled = true;
+		string typeString = player.type;
+		if (!typeString.Equals ("default")) {
+			MonoBehaviour type = myPlayerGO.GetComponent (player.type) as MonoBehaviour;
+			type.enabled = true;
+		}
+
 		myPlayerGO.transform.FindChild("Dummy").gameObject.SetActive (true);
 		playerLiving=true;
 	}

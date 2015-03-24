@@ -1,0 +1,189 @@
+https://drive.google.com/folderview?id=0By3RGhM4GeQdfmczcHptaHNLX3RxMXZJblJMMXpSWXRnMDc1VERGdnpZbzh6eGRBaGF3ZEk&usp=sharing
+
+https://drive.google.com/folderview?id=0By3RGhM4GeQdfmtFb1N3c1IyamZjUHJVWDgydkdhem9na2Q1UUF4TzFwTEVieHdncUY1ejA&usp=sharing
+Somehow spawn 2 characters
+die under strange circumstances(other player's deaths?)
+GUI problems due to the above
+
+weight balancing:
+
+  4 primary attributes
+    move force  more move force--> faster change in velocity, more agile
+    Rot force   more rot force --> faster spinning?  sometimes faster movement
+    Drag        less drag--> higher max speed
+    Mass        more mass--> harder to push, easier to push others
+
+  3 resultant attributes:
+    acceleration: moveForce/mass-->more agile
+    Max speed: combination of acceleration - drag*velocity-->faster travel time
+    Max Inertia: maxSpeed*mass-->more one-shot collisions
+  
+  8 Types    
+    Crybaby: low max speed, low accel, low maxInertia:  slow, fragile
+    Sumo: low maxSpeed,  low accel, high maxInertia: low speed durability
+    Dancer: low max speed, high accel, low maxInertia: quick direction change
+    Bumper: low maxSpeed, high accel, high maxInertia: quick interference
+    DriveBy: high maxSpeed, low accel, low maxInertia: high speed ability use
+    Striker: high maxSpeed, low accel, high maxInertia: high speed impacts
+    Wizkid: high maxSpeed, high accell, low maxInertia: difficult control, skilled manuvarablity
+    Daredevil: high max speed, high accel, high maxInertia: difficult control, basically doomed
+
+
+
+    
+    
+    
+present box: Crybaby
+road block: Sumo
+chair: Dancer
+crate: Bumper
+bucket: Driveby
+table: Striker
+revolver: Wizkid
+barrel: Daredevil
+
+maps
+f=ma
+f=0=ma-d
+
+d needs to be proportional to v^2 || mv^2, not v?
+
+max v= (moveForce)/dragForce, v*dragForce=moveForce
+////////////////////max speed range =(mass*moveForce)/dragForce= 1-100
+accel range = moveForce/Mass = 1-100
+max inertia range = maxSpeed*mass = mass^2*moveForce/dragForce = 1-100
+
+1= m*F/D = F/m = m^2*F/D
+
+<MFD>
+000 PRESENT
+1= F/D, D=F, 
+1= F/m, m=F, 
+1= F*m^2/D, D=F*m^2, D=D*m^2, 1=m^2, 1=m
+<1,1,1>X
+001 ROADBLOCK
+1= F/D, D=F
+1= F/m, m=F
+100= F*m^2/D, 100D=F*m^2, 100=m^2, m=10
+<10,10,10>X
+010 CHAIR
+1= F/D, D=F, 100=D
+100= F/m, 100m=F, 100=F
+1= F*m^2/D, D=F*m^2, F=F*m^2, 1=m^2, 1=m
+<1,100,100>X
+011 CRATE
+1= F/D, D=F
+100= F/m, 100m=F
+100= F*m^2/D, D=F*m^2, 100D=D*m^2, 100=m^2, 10=m
+<10,1000,1000>X
+100 BUCKET
+100= F/D, 100D=F
+1= F/m, F=m
+1= F*m^2/D, D=F*m^2, D=100D*m^2, 1=100m^2, 1/100=m^2, 1/10=m
+<.1, .1, .001>X
+101 TABLE
+100= F/D, 100D=F
+1= F/m, m=F, 
+100= F*m^2/D, 100D=F*m^2, F=F*m^2, 1=m^2, 1=m
+<1,1,.01>X
+110 REVOLVER
+1= F/D, D=F
+100= F/m, 100m=F
+100= F*m^2/D, 100D=F*m^2,  100F=F*m^2, 100=m^2, 10=m
+<10,1000,1000>X
+111 BARREL
+100= F/D, 100D=F, 
+100= F/m, 100m=F, 
+100= F*m^2/D, 100D=F*m^2, F=F*m^2, 1=m^2, 1=m
+<1, 100, 100>
+
+
+chair, crate
+
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkCharacter.OnPhotonSerializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+
+  at PhotonView.SerializeComponent (UnityEngine.Component component, .PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+
+  at PhotonView.SerializeView (.PhotonStream stream, .PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+
+  at NetworkingPeer.OnSerializeWrite (.PhotonView view) [0x00000] in <filename unknown>:0 
+
+  at NetworkingPeer.RunViewUpdate () [0x00000] in <filename unknown>:0 
+
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+dragForce = (dm*v^2)
+force = 0 = (dmv^2)-F, F=dmv^2, v^2 = F/dm, v= root(F/dm)
+accell = F/m
+max inertia = v = m*root(F/dm)
+<M,F,D>
+
+1 =  root(F/dm), 1 = F/dm, dm=F, 1=d, d=1
+1 = F/m, m=F, F=1
+1 = m*root(F/dm), 1=m*1, m=1,
+<1,1,1>present
+
+1 = root(F/dm), 1= F/dm, dm=F, dF=F, d=1
+1 = F/m, m=F, 100=F
+100 = m*root(F/dm), 100=m*1, m=100
+<100,100,1>roadblock
+
+1 = root(F/dm), 1= F/dm, dm=F, d*1=100, d=100
+100 = F/m, 100m=F, 100=F
+1 = m*root(F/dm), 1=m*1, m=1
+<1,100,100>chair
+
+1 = root(F/dm), 1= F/dm, dm=F, d*100=10000, d=100
+100 = F/m, 100m=F, 100*100=F, 10000=F
+100 = m*root(F/dm), 100=m*1, 100=m
+<100,10000,100>crate
+
+
+
+
+
+100 = root(F/dm), 10000=F/dm, 10000dm=F, 10000dF=F, 10000d=1, d=1/10000, d=.0001
+1 = F/m, m=F, F=.01
+1 = m*root(F/dm), 1=m*100, 1=100m, 1/100=m, .01=m
+<.01,.01,.0001>bucket
+
+100 = root(F/dm), 10000=F/dm, 10000dm=F, 10000dF=F, 10000d=1, 1=1/10000, d=.0001
+1 = F/m, m=F, 1=f
+100 = m*root(F/dm), 100=m*100, 1=m
+<1,1,.0001>table
+
+100 = root(F/dm), 10000=F/dm, 10000dm=F, 10000dm=100m, 100d=1, d=1/100, d=.01
+100 = F/m, 100m=F, 100*.01=F, F=1
+1 = m*root(F/dm), 1=m*100, 1/100=m, m=.01
+<.01,1,.01>revolver
+
+100 = root(F/dm), 10000=F/dm, 10000dm=F, 1000dm=100m, 100d=1, d=1/100, d=.01
+100 = F/m, 100m=F, 100=F
+100 = m*root(F/dm), 100=m*100, 1=m,
+<1,100,.01>barrel
+
+y=root(x)*a
+0=root(0)*0
+1=root(100)*a
+a=.1
+
+
+
+get mouse before 7
+get car for tommorow
+get cleaning things from dorm
+

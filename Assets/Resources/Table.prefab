@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11438330}
   m_Layer: 0
   m_Name: Dummy
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,7 @@ GameObject:
   - 114: {fileID: 11426140}
   - 114: {fileID: 11469722}
   - 114: {fileID: 11497228}
+  - 114: {fileID: 11488604}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -596,9 +597,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d6040d623eb4b409b7b187ee3e6530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Table
   last: {fileID: 0}
+  grabbing: 0
   pv: {fileID: 0}
+  myCamera: {fileID: 138330}
+  r: {fileID: 0}
 --- !u!114 &11438330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -636,9 +640,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae4ad1917674941b7d0f81ffc9d2c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 10
+  moveForce: 1
   rotForce: 1
   r: {fileID: 5443992}
+  dragForce: 9.99999975e-05
+  mass: 0
 --- !u!114 &11469722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -664,6 +670,18 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
+--- !u!114 &11488604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294389d7adf1fd44d8ce7289f352ea0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m: {fileID: 0}
 --- !u!114 &11497228
 MonoBehaviour:
   m_ObjectHideFlags: 1
